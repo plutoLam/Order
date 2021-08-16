@@ -36,8 +36,8 @@
         </a>
       </li>
     </ul>
-    <submit-tabbar @click.native="toPay()">
-      <div slot="right">去支付</div>
+    <submit-tabbar>
+      <div slot="right" @click="toPay()">去支付</div>
     </submit-tabbar>
   </div>
 </template>

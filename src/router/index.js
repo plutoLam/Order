@@ -5,6 +5,7 @@ const Home = () => import('views/home/Home')
 const Submit = () => import('views/submit/Submit')
 const SubmitOrder = () => import('components/submit/SubmitOrder')
 const PayOrder = () => import('components/submit/PayOrder')
+const OrderList = () => import('views/orderList/OrderList')
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,11 @@ const routes = [{
 		name:'home',
 		path: '/home',
 		component: Home
+	},
+  {
+		name:'orderlist',
+		path: '/orderList',
+		component: OrderList
 	},
 	{
 		path: '/submit',

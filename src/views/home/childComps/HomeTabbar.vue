@@ -49,17 +49,17 @@
 <style scoped>
 	.home-tab {
 		width: 93%;
-		height: 35px;
+		height: 2.1875rem;
 		background-color: #393834;
 		position: fixed;
-		bottom: 10px;
+		bottom: 0.625rem;
 		left: 50%;
 		transform: translate(-50%, 0);
-		border-radius: 22.5px;
+		border-radius: 1.4063rem;
 		display: flex;
 		/* overflow: hidden; */
 		color: white;
-		z-index: 2;
+		z-index: 4;
 	}
 
 	.left {
@@ -68,9 +68,9 @@
 	}
 
 	.cart {
-		width: 35px;
-		height: 35px;
-		border-radius: 22.5px;
+		width: 2.1875rem;
+		height: 2.1875rem;
+		border-radius: 1.4063rem;
 		background-color: #2E2E2E;
 		display: flex;
 		justify-content: center;
@@ -78,8 +78,8 @@
 	}
 
 	.price {
-		line-height: 35px;
-		padding-left: 9px;
+		line-height: 2.1875rem;
+		padding-left: 0.5625rem;
 	}
 
 	.go {
@@ -89,14 +89,14 @@
 		height: 100%;
 		background-color: #FE6635;
 		text-align: center;
-		line-height: 35px;
-		font-size: 14px;
-		border-top-right-radius: 35px;
-		border-bottom-right-radius: 35px;
+		line-height: 2.1875rem;
+		font-size: 0.875rem;
+		border-top-right-radius: 2.1875rem;
+		border-bottom-right-radius: 2.1875rem;
 	}
 
 	.cart img {
-		width: 18px;
-		height: 18px;
+		width: 1.125rem;
+		height: 1.125rem;
 	}
 </style>

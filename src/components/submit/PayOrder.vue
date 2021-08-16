@@ -21,7 +21,7 @@
 		</ul>
 		<submit-tabbar>
 			<span slot="left">还需支付 </span>
-			<div slot="right">支付并下单</div>
+			<div slot="right" @click="pay()">支付并下单</div>
 		</submit-tabbar>
 	</div>
 </template>
@@ -41,6 +41,10 @@
 		methods: {
 			back() {
 				this.$router.push({ name: 'submitorder' })
+			},
+			pay() {
+				this.$store.commit('over')
+				this.$router.push({ name: 'orderlist' })
 			}
 		},
 	}

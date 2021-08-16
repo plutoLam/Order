@@ -1,13 +1,15 @@
 <template>
-	<div class="home">
-		<home-info></home-info>
+	<div class="home" :class="{wrap:isSearch}">
+		<home-info @search="search()"></home-info>
 		<home-recommend :recommend="recommend"></home-recommend>
 		<goods-list :category="category" :goods="goods"></goods-list>
 		<home-tabbar @showCart="showCart()"></home-tabbar>
 
-		<van-overlay :show="show" @click.self="show = false" z-index="1" duration="0.1">
+		<van-overlay :show="show" @click.self="show = false" z-index="3" duration="0.1">
 			<home-cart-list></home-cart-list>
 		</van-overlay>
+		<home-search v-show="isSearch" :goods="goods" @onCancel="isSearch=false"></home-search>
+		<!-- <van-popup v-model:show="show">内容</van-popup> -->
 	</div>
 </template>
 
@@ -18,7 +20,8 @@
 	import HomeTabbar from './childComps/HomeTabbar.vue'
 	import HomeCartList from './childComps/HomeCartList.vue'
 	import { getRecommend, getGoods, getCategory } from '@/network/home.js'
-	import { Overlay } from 'vant';
+	import { Overlay, Popup } from 'vant';
+	import HomeSearch from './childComps/HomeSearch'
 	export default {
 		name: 'Home',
 		components: {
@@ -27,10 +30,13 @@
 			HomeRecommend,
 			HomeTabbar,
 			HomeCartList,
-			[Overlay.name]: Overlay
+			[Overlay.name]: Overlay,
+			[Popup.name]: Popup,
+			HomeSearch
 		},
 		data() {
 			return {
+				isSearch: false,
 				recommend: [],
 				category: [],
 				goods: [],
@@ -42,7 +48,15 @@
 			this.getGoodsData()
 			this.getCategoryData()
 		},
+		computed: {
+			goodsName() {
+				return this.goods.map(item => { return item.name })
+			}
+		},
 		methods: {
+			search() {
+				this.isSearch = true
+			},
 			showCart() {
 				this.show = true
 			},
@@ -57,7 +71,7 @@
 						} else {
 							item.image = '~assets/img/home/noPic.png'
 						}
-						console.log(item);
+						// console.log(item);
 						return item
 					})
 				})
@@ -90,6 +104,11 @@
 </script>
 
 <style>
+	.wrap {
+		height: 100vh;
+		overflow: hidden;
+	}
+
 	.home {
 		background-color: #FAFAFA;
 		/* height: 2000px; */

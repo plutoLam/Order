@@ -3,8 +3,8 @@
 		<div class="content">
 			<div class="left-wrap" ref="leftWarp">
 				<div>
-					<div class="left-item" v-for="(item,index) in category" @click="selectMenu(index,$event)"
-						ref="leftItemList" :class="{'current':currentIndex === index}">
+					<div class="left-item" v-for="(item,index) in category" @click="selectMenu(index,$event)" ref="leftItemList"
+						:class="{'current':currentIndex === index}">
 						<span>{{item.name}}</span>
 					</div>
 				</div>
@@ -15,8 +15,7 @@
 					<div class="right-item" v-for="(item,index) in category" ref="rightItemList">
 						<div class="title">· {{item.name}}</div>
 						<div class="detail">
-							<goods-list-item v-for="i in goods.filter(value => value.category == item.id)"
-								:goodsItem="i">
+							<goods-list-item v-for="i in goods.filter(value => value.category == item.id)" :goodsItem="i">
 							</goods-list-item>
 						</div>
 					</div>
@@ -78,7 +77,7 @@
 			_calculateHeight() {
 				let rightItemList = this.$refs.rightItemList;
 				// console.log('rightItemList', rightItemList)
-				if(rightItemList){   //rightItemList可能还没有加载出来，此时没有length
+				if (rightItemList) {   //rightItemList可能还没有加载出来，此时没有length
 					let height = 0;
 					this.listHeight.push(height);
 					for (let i = 0; i < rightItemList.length; i++) {
@@ -113,8 +112,8 @@
 	.content {
 		display: flex;
 		position: absolute;
-		top: 40px;
-		bottom: 50px;
+		top: 2.5rem;
+		bottom: 3.125rem;
 		width: 100%;
 		overflow: hidden;
 	}
@@ -128,11 +127,11 @@
 
 	.left-item {
 		width: 100%;
-		height: 54px;
-		/* line-height: 54px; */
+		height: 3.375rem;
+		/* line-height: 3.375rem; */
 		text-align: center;
-		font-size: 0.8125rem;
-		padding: 0 5px;
+		font-size: 13px;
+		padding: 0 0.3125rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -149,25 +148,25 @@
 	}
 
 	.right-item .title {
-		padding-left: 14px;
-		height: 26px;
-		line-height: 26px;
-		/* border-left: 2px solid #d9dde1; */
-		font-size: 12px;
+		padding-left: 0.875rem;
+		height: 1.625rem;
+		line-height: 1.625rem;
+		/* border-left: 0.125rem solid #d9dde1; */
+		font-size: 0.75rem;
 		color: #93999f;
 		/* background: #f3f5f7; */
 	}
 
 	.detail {
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		width: 100%;
 	}
 
 	.detail-content {
-		/* height: 50px; */
-		padding-left: 10px;
-		line-height: 50px;
+		/* height: 3.125rem; */
+		padding-left: 0.625rem;
+		line-height: 3.125rem;
 		color: #93999f;
-		/* font-size: 20px; */
+		/* font-size: 1.25rem; */
 	}
 </style>
