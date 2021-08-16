@@ -1,0 +1,44 @@
+.container {
+  background-color: white;
+  width: 93%;
+  /* background-color: pink; */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 15px;
+}
+
+
+
+li {
+  padding: 10px 0;
+  margin: 0 13px;
+  height: 65px;
+  /* background-color: powderblue; */
+  border-bottom: #eee 1px solid;
+  position: relative;
+  display: flex;
+}
+
+
+li img {
+  width: 40px;
+  height: 40px;
+}
+
+li .info {
+  margin-left: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info .info-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.count {
+  font-size: 10px;
+}
